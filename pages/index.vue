@@ -6,7 +6,7 @@
         Biancoir<sup>&trade;</sup>
       </h1>
       <p class="subtitle text-lg md:text-xl lg:text-2xl">
-        Get colors inspiration for your next project.
+        Get palette inspiration for your next project.
       </p>
     </div>
   </div>
