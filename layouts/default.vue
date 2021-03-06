@@ -15,6 +15,6 @@ export default {
 </script>
 <style scoped>
 .main-color {
-  @apply bg-white;
+  @apply bg-gray-200;
 }
 </style>

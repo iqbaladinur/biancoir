@@ -1,8 +1,8 @@
 <template>
   <img
-    src="~/assets/biancoir.svg"
+    src="~/assets/ideas.svg"
     alt="biancoir logo"
-    class="main-logo w-24 md:w-32 lg:w-48"
+    class="main-logo w-64 md:w-32 lg:w-64 xl:w-72 h-auto"
   />
 </template>
 

@@ -1,19 +1,26 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title text-3xl md:text-4xl lg:text-5xl">
-        Biancoir<sup>&trade;</sup>
-      </h1>
-      <p class="subtitle text-lg md:text-xl lg:text-2xl">
-        Get palette inspiration for your next project.
-      </p>
+  <div>
+    <div class="container">
+      <div>
+        <Logo />
+        <h1 class="title text-3xl md:text-4xl lg:text-5xl">
+          Biancoir<sup>&trade;</sup>
+        </h1>
+        <p class="subtitle text-lg md:text-xl lg:text-2xl">
+          Get palette inspiration for your next project.
+        </p>
+        <generate-palette-keyword />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import GeneratePaletteKeyword from '~/components/GeneratePaletteKeyword.vue'
+export default {
+  name: 'Home',
+  components: { GeneratePaletteKeyword },
+}
 </script>
 
 <style scoped>
