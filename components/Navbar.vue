@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-full text-gray-700">
+  <div class="fixed w-full text-gray-700 z-20">
     <div class="flex bg-blue-200 bg-opacity-25">
       <div class="w-1/3 lg:w-1/4 justify-end flex items-center">
         <img src="~/assets/biancoir.svg" alt="biancoir logo" class="w-8 py-2" />

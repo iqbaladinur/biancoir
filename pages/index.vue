@@ -17,7 +17,10 @@
           <div class="h-5 mt-5">
             {{ status }}
           </div>
-          <div v-if="isResultReady" class="bg-red-100 flex justify-center">
+          <div
+            class="bg-red-100 flex justify-center transition-opacity duration-300 ease-in-out"
+            :class="isResultReady ? 'opacity-100' : 'opacity-0'"
+          >
             <button
               class="animate-bounce focus:outline-none absolute bottom-0 m-auto pb-10"
               @click="scrollToResult()"
@@ -39,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div id="generateResult">
+    <div id="generateResult" class="bg-white rounded-t-3xl">
       <client-only>
         <color-display-section
           :img-data="imgData"

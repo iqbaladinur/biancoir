@@ -1,8 +1,19 @@
 <template>
-  <div v-show="!isExtracting && result.length > 0">
-    <pre>
-      {{ result }}
-    </pre>
+  <div
+    v-show="!isExtracting && result.length > 0"
+    class="h-screen flex justify-center items-center container"
+  >
+    <div>
+      <p class="text-left px-5">Keyword</p>
+      <div class="flex flex-wrap w-full">
+        <div v-for="(data, key) in result" :key="key" class="w-1/5 h-32 p-5">
+          <div class="w-full h-full" :style="`background: ${data.colorHex}`" />
+          <p class="text-left">
+            {{ data.colorHex }}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
