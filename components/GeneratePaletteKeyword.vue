@@ -100,8 +100,6 @@ export default {
 </script>
 <style scoped>
 .search-field {
-  /* @apply transform;
-  @apply scale-125; */
   @apply w-full;
 }
 </style>
