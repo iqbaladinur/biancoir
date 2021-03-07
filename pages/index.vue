@@ -6,9 +6,9 @@
         <h1 class="title text-3xl md:text-4xl lg:text-5xl">
           Biancoir<sup>&trade;</sup>
         </h1>
-        <p class="subtitle text-lg md:text-xl lg:text-2xl">
+        <header class="subtitle text-lg md:text-xl lg:text-2xl">
           Get palette inspiration for your next project.
-        </p>
+        </header>
         <generate-palette-keyword />
       </div>
     </div>

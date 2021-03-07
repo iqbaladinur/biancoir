@@ -10,11 +10,11 @@
       <div
         class="w-2/3 lg:w-3/4 bg-gradient-to-r from-blue-200 to-yellow-300 bg-opacity-50 rounded-l-3xl pr-10 lg:pr-32"
       >
-        <div class="menu">
+        <nav class="menu">
           <NuxtLink to="/browse" class="mx-5">Browse Palette</NuxtLink>
           <NuxtLink to="/extract" class="mx-5">Extract Color</NuxtLink>
           <NuxtLink to="/about" class="mx-5">About</NuxtLink>
-        </div>
+        </nav>
         <div
           v-show="!isShowMobileMenu"
           class="flex md:hidden lg:hidden xl:hidden 2xl:hidden items-center justify-end h-full"
