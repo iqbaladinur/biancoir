@@ -2649,6 +2649,10 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
+"clusterfck@git+https://github.com/iqbaladinur/clustering.git":
+  version "0.6.0"
+  resolved "git+https://github.com/iqbaladinur/clustering.git#9793a7427d1e4a152b4b7b7a4b18fcad22d3b6ae"
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"

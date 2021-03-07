@@ -14,6 +14,9 @@ export default {
 }
 </script>
 <style scoped>
+html {
+  scroll-behavior: smooth;
+}
 .main-color {
   @apply bg-gray-200;
 }

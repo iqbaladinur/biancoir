@@ -35,7 +35,9 @@
           </svg>
           <svg
             v-else
-            class="animate-spin w-5"
+            width="16"
+            height="16"
+            class="animate-spin w-10"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -61,6 +63,8 @@
 </template>
 
 <script>
+import { getImgData } from '@/helper/img'
+
 export default {
   name: 'Generator',
   data() {
@@ -70,19 +74,40 @@ export default {
       keyword: '',
       isFailedSearching: false,
       failedReason: '',
+      isFailedGetImgData: false,
     }
   },
   methods: {
     searchImage() {
-      const baseUrl = 'https://source.unsplash.com/800x600?'
+      const baseUrl = 'https://source.unsplash.com/200x150?'
       this.isSearching = true
       this.isFailedSearching = false
+      this.isFailedGetImgData = false
       this.failedReason = ''
+      this.$emit('searchStatus', {
+        status: this.isSearching,
+        errorMsg: this.failedReason,
+        isFailed: this.isFailedSearching,
+      })
       fetch(`${baseUrl}${this.keyword}`)
         .then((result) => result.blob())
         .then((image) => {
-          this.isFocused = false
           this.$refs.searchForm.blur()
+          getImgData(image)
+            .then((imgData) => {
+              this.$emit('extractedColor', imgData)
+            })
+            .catch((e) => {
+              this.isFailedGetImgData = true
+              this.failedReason = e.message
+            })
+            .finally(() => {
+              this.$emit('searchStatus', {
+                status: this.isSearching,
+                errorMsg: this.failedReason,
+                isFailed: this.isFailedSearching,
+              })
+            })
         })
         .catch((e) => {
           this.isFailedSearching = true
@@ -93,6 +118,11 @@ export default {
           if (!this.isFailedSearching) {
             this.keyword = ''
           }
+          this.$emit('searchStatus', {
+            status: this.isSearching,
+            errorMsg: this.failedReason,
+            isFailed: this.isFailedSearching,
+          })
         })
     },
   },
@@ -100,6 +130,6 @@ export default {
 </script>
 <style scoped>
 .search-field {
-  @apply w-full;
+  width: 100%;
 }
 </style>
