@@ -36,7 +36,7 @@
           </button>
         </div>
         <div class="menu-mobile" :class="mobileMenuVisiBilityClass">
-          <div class="bg-gray-100 h-full p-3 rounded-xl">
+          <div class="h-full p-3 rounded-xl custom-bg">
             <button
               class="float-right w-10 py-2"
               @click="isShowMobileMenu = false"
@@ -107,6 +107,14 @@ export default {
   @apply h-screen;
   @apply w-screen;
   @apply z-10;
+}
+.custom-bg {
+  background: rgba(225, 225, 225, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(174, 174, 184, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 @screen lg {
   .menu {
