@@ -13,7 +13,7 @@
           v-model="keyword"
           type="text"
           placeholder="Type a word to generate color..."
-          class="w-full rounded-l-full h-10 pl-5 focus:outline-none"
+          class="w-full rounded-l-full h-10 pl-5 focus:outline-none text-center"
           @focus="isFocused = true"
           @blur="isFocused = false"
         />
@@ -89,10 +89,11 @@ export default {
         errorMsg: this.failedReason,
         isFailed: this.isFailedSearching,
       })
+      this.$refs.searchForm.blur()
+      this.$store.commit('common/setKeyword', this.keyword)
       fetch(`${baseUrl}${this.keyword}`)
         .then((result) => result.blob())
         .then((image) => {
-          this.$refs.searchForm.blur()
           getImgData(image)
             .then((imgData) => {
               this.$emit('extractedColor', imgData)

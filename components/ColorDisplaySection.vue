@@ -4,11 +4,20 @@
     class="h-screen flex justify-center items-center container"
   >
     <div>
-      <p class="text-left px-5">Keyword</p>
+      <p class="text-left px-5">
+        Show result for: <b>{{ keyword }}</b>
+      </p>
       <div class="flex flex-wrap w-full">
-        <div v-for="(data, key) in result" :key="key" class="w-1/5 h-32 p-5">
-          <div class="w-full h-full" :style="`background: ${data.colorHex}`" />
-          <p class="text-left">
+        <div
+          v-for="(data, key) in result"
+          :key="key"
+          class="w-full md:w-1/5 lg:w-1/5 xl:w-1/5 h-16 md:h-32 lg:h-32 xl:h-32 py-4 px-5 md:p-5 lg:p-5 xl:p-5"
+        >
+          <div
+            class="w-full h-full rounded-lg"
+            :style="`background: ${data.colorHex}`"
+          />
+          <p class="text-left pt-1 uppercase">
             {{ data.colorHex }}
           </p>
         </div>
@@ -18,6 +27,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import clusterColor from '@/modules/ClusterFvck'
 export default {
   name: 'ColorDisplaySection',
@@ -37,6 +47,11 @@ export default {
       isExtracting: false,
       result: [],
     }
+  },
+  computed: {
+    ...mapGetters({
+      keyword: 'common/getKeyword',
+    }),
   },
   watch: {
     async imgData() {

@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div id="generateResult" class="bg-white rounded-t-3xl">
+    <div id="generateResult" class="bg-white rounded-3xl">
       <client-only>
         <color-display-section
           :img-data="imgData"
