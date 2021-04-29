@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div class="container relative">
+    <div class="container-custom relative">
       <div>
         <Logo />
         <h1 class="title text-3xl md:text-4xl lg:text-5xl">
           Biancoir<sup>&trade;</sup>
         </h1>
-        <header class="subtitle text-lg md:text-xl lg:text-2xl">
+        <header
+          class="subtitle px-5 text-lg md:text-xl lg:text-2xl xl:text-3xl"
+        >
           Get palette inspiration for your next project.
         </header>
         <generate-palette-keyword
@@ -114,7 +116,7 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
+.container-custom {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;

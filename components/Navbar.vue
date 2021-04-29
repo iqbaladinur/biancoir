@@ -83,7 +83,7 @@ export default {
   computed: {
     mobileMenuVisiBilityClass() {
       if (this.isShowMobileMenu) {
-        return 'visible'
+        return 'visible active'
       }
       return 'invisible'
     },
@@ -107,6 +107,11 @@ export default {
   @apply h-screen;
   @apply w-screen;
   @apply z-10;
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: scale(0);
+}
+.active {
+  transform: scale(1);
 }
 .custom-bg {
   background: rgba(225, 225, 225, 0.25);
