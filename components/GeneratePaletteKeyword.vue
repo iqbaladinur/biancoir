@@ -5,7 +5,7 @@
       @submit.prevent="searchImage()"
     >
       <div
-        class="flex w-full md:w-2/3 lg:w-2/3 xl:w-2/3 shadow rounded-full transition-all duration-300 ease-in-out"
+        class="flex w-full md:w-2/3 lg:w-2/3 xl:w-2/4 shadow rounded-full transition-all duration-300 ease-in-out"
         :class="{ 'search-field shadow-md': isFocused }"
       >
         <input
@@ -13,7 +13,7 @@
           v-model="keyword"
           type="text"
           placeholder="Type a word to generate color..."
-          class="w-full rounded-l-full h-10 pl-5 focus:outline-none text-center"
+          class="w-full rounded-l-full h-10 pl-5 focus:outline-none text-center text-gray-600"
           @focus="isFocused = true"
           @blur="isFocused = false"
         />

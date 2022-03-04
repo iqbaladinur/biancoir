@@ -23,6 +23,7 @@
             class="bg-red-100 flex justify-center transition-opacity duration-300 ease-in-out"
             :class="isResultReady ? 'opacity-100' : 'opacity-0'"
           >
+            <small class="absolute bottom-0 m-auto pb-24">See Results</small>
             <button
               class="animate-bounce focus:outline-none absolute bottom-0 m-auto pb-10"
               @click="scrollToResult()"
@@ -118,7 +119,7 @@ export default {
 */
 .container-custom {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 5rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,13 +128,13 @@ export default {
 
 .title {
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
+  font-weight: 400;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

@@ -1,6 +1,6 @@
 <template>
   <div class="fixed w-full text-gray-700 z-20">
-    <div class="flex bg-blue-200 bg-opacity-25">
+    <div class="flex bg-gray-300">
       <div class="w-1/3 lg:w-1/4 justify-end flex items-center">
         <img src="~/assets/biancoir.svg" alt="biancoir logo" class="w-8 py-2" />
         <p class="px-2 font-bold text-sm md:text-base lg:text-base">
@@ -54,7 +54,7 @@
                 />
               </svg>
             </button>
-            <ul class="mt-10 text-center">
+            <ul class="mt-10 text-center font-medium">
               <li class="m-5">
                 <NuxtLink to="/browse">Browse Palette</NuxtLink>
               </li>
@@ -107,7 +107,7 @@ export default {
   @apply h-screen;
   @apply w-screen;
   @apply z-10;
-  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.2s ease;
   transform: scale(0);
 }
 .active {
